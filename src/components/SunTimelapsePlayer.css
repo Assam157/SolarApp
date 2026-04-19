@@ -1,0 +1,162 @@
+/* ================================
+   Layout & Grid
+================================ */
+.sun-player-container {
+  width: min(90vw, 900px);            /* zoom-safe */
+  margin: 24px auto;
+  padding: 18px;
+  background: #0a0a0a;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  border-radius: 12px;
+}
+
+.solar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.grid-item {
+  border: 1px solid #222;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* ================================
+   Image Container
+================================ */
+.image-container {
+  aspect-ratio: 1 / 1;
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.grid-label {
+  padding: 8px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  background: #111;
+}
+
+/* ================================
+   CSS Filters
+================================ */
+.filter-uv img {
+  filter: sepia(1) hue-rotate(240deg) saturate(3) brightness(1.2);
+}
+.filter-visible img { filter: none; }
+.filter-golden img {
+  filter: sepia(0.8) saturate(5) contrast(1.2);
+}
+.filter-infrared img {
+  filter: grayscale(1) invert(1) hue-rotate(180deg) brightness(0.8);
+}
+
+/* ================================
+   Player UI & Timeline
+================================ */
+.player-controls {
+  padding-bottom: 20px;
+}
+
+.timeline-area {
+  position: relative;
+  height: 210px;
+}
+
+/* ================================
+   VALUE TOOLTIP (SUNSPOT)
+================================ */
+.val-tooltip {
+  position: absolute;
+  bottom: 150px;                      /* above curve */
+  transform: translateX(-50%);
+  background: gold;
+  color: black;
+  padding: 3px 8px;
+  font-size: 22px;
+  font-weight: 800;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.tooltip-clock {
+  margin-right: 6px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.tooltip-value {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+/* ================================
+   GREEN GRAPH
+================================ */
+.trace-canvas {
+  position: absolute;
+  left: 0;
+  top: 70px;                          /* graph baseline */
+  width: 100%;
+  height: 60px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ================================
+   YELLOW SUN KNOB (ON CURVE)
+================================ */
+.trace-knob {
+  position: absolute;
+  top: 100px;                         /* center of curve */
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff, gold, orange);
+  transform: translate(-50%, -50%);   /* center aligns on curve */
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.9);
+  pointer-events: none;
+  z-index: 6;
+}
+
+/* ================================
+   DATE DISPLAY (BELOW KNOB)
+================================ */
+.year-display {
+  position: absolute;
+  top: 120px;                         /* below knob */
+  transform: translateX(-50%);
+  font-family: monospace;
+  font-size: 22px;
+  font-weight: bold;
+  color: gold;
+  z-index: 4;
+  white-space: nowrap;
+}
+
+/* ================================
+   SCRUBBER
+================================ */
+.slider-input {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  appearance: none;
+  background: #333;
+  height: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+  z-index: 5;
+}
