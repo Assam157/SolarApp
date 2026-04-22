@@ -22,7 +22,7 @@ export default function SunDispTimer() {
 
   /* ---------------- LOAD index.txt ---------------- */
   useEffect(() => {
-    fetch(process.env.PUBLIC_URL + "/assets/images/index.txt")
+    fetch(process.env.PUBLIC_URL + "/assets/imaages/index.txt")
       .then((r) => r.text())
       .then((t) => {
         const parsed = t
@@ -40,7 +40,7 @@ export default function SunDispTimer() {
 
   /* ---------------- LOAD sunspot.txt ---------------- */
   useEffect(() => {
-    fetch(process.env.PUBLIC_URL + "/assets/images/sunspot.txt")
+    fetch(process.env.PUBLIC_URL + "/assets/imaages/sunspot.txt")
       .then((r) => r.text())
       .then((t) => {
         const map = {};
@@ -120,7 +120,7 @@ export default function SunDispTimer() {
   /* ---------------- IMAGE PATH (MONTHLY) ---------------- */
   const imgPath =
     process.env.PUBLIC_URL +
-    `/assets/images/${current?.year}/${String(current?.month).padStart(
+    `/assets/imaages/${current?.year}/${String(current?.month).padStart(
       2,
       "0"
     )}/01.jpg`; // ✅ CHANGED
