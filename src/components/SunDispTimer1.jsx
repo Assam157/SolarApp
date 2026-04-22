@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./SunTimelapsePlayer.css";
 
-const IMAGE_BASE = "/assets/images";
+const IMAGE_BASE = "/assets/imaages";
 
 /* Filters unchanged */
 const FILTERS = [
@@ -104,7 +104,7 @@ export default function SunTimelapsePlayer() {
                 alt={`Solar ${current.key}`}
                 loading="lazy"
                 onError={e => {
-                  e.currentTarget.src = "/assets/images/placeholder.jpg";
+                  e.currentTarget.src = "/assets/imaages/placeholder.jpg";
                 }}
               />
               <div className="fits-info">
